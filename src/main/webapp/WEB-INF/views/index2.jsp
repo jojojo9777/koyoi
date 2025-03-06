@@ -34,9 +34,7 @@
 
     <!-- 메인 콘텐츠 영역 -->
     <main class="content">
-        <button type="button" style="width: 100px" onclick="location.href='/detail-sidebar2'"></button>
-
-        <p>메인 콘텐츠 영역</p>
+        <jsp:include page="${contentPage}" />
     </main>
 
 

@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap');
+
+/* 전체 배경 */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #f5f0ea;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 전체 컨테이너 */
+.container {
+    width: 1440px;
+    height: 95vh;
+    background-color: #fff3e7;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 헤더 바 */
+.header-bar {
+    width: 100%;
+    height: 120px;
+    background-color: #D2C4D6;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 중앙 정렬 */
+    padding: 0 30px;
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* 로고 컨테이너 (중앙 정렬) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 로고 아이콘 */
+.logo-icon {
+    width: 140px;
+    height: 140px;
+}
+
+/* 브랜드 텍스트 */
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3D2C2E;
+    font-family: 'Inknut Antiqua', serif;
+}
+
+/* 헤더 아이콘 컨테이너 (우측으로 이동) */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    right: 100px; /* 왼쪽으로 살짝 땡기기 */
+}
+
+/* 헤더 버튼 */
+.header-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* 아이콘 크기 */
+.header-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* 버튼 호버 효과 */
+.header-btn:hover {
+    transform: scale(1.1);
+}
+
+/* 프로필 이미지 */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #ddd;
+}
+
+/* 메인 콘텐츠 */
+.content {
+    flex-grow: 1;
+    margin: 100px 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* 우측 상단 고정 이미지 */
+.fixed-top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: auto;
+    z-index: 10;
+}
+
+/* 메인 컨테이너 (Flexbox 적용) */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: calc(100% - 120px); /* 헤더 제외한 높이 */
+    position: relative;
+}
+
+/* 명언 영역 */
+.quotes-container {
+    background-color: #FFEBCC;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    z-index: 10;
+}
+
+/* 메인 콘텐츠 (달력 + 무드통계) */
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+/* 왼쪽 영역 (달력 + 챗봇) */
+.left-content {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 10px;
+}
+
+/* 달력 영역 */
+.calendar-container {
+    background-color: #D2E4FF;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 챗봇 영역 */
+.chat-connect {
+    background-color: #FFD6A5;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 오른쪽 영역 (무드통계 + 체크리스트) */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 10px;
+}
+
+/* 무드 그래프 */
+.mood-graph {
+    background-color: #FDD7E4;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+/* 체크리스트 컨테이너 */
+.checklists {
+    background-color: #C6F6D5;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 2;
+    display: flex;
+    flex-direction: row; /* 가로 정렬 */
+    justify-content: space-between; /* 좌우 정렬 */
+    gap: 10px;
+}
+
+/* 개별 체크리스트 항목 */
+.checklist {
+    background-color: #FFFFFF;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 48%; /* 두 개가 나란히 배치되도록 설정 */
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* 내부 내용을 세로 정렬 */
+    gap: 10px;
+}
+
+
