@@ -65,13 +65,13 @@ function validateForm() {
 
     // ID 검사
     if (userIdInput.value.trim() === "") {
-        idError.textContent = "Please enter your ID.";
+        idError.textContent = "ユーザー名を入力してください";
         isValid = false;
     }
 
     // PW 검사
     if (userPwInput.value.trim() === "") {
-        pwError.textContent = "Please enter your password.";
+        pwError.textContent = "パスワードを入力してください";
         isValid = false;
     }
 

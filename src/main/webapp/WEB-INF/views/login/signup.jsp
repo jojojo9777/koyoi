@@ -6,7 +6,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>KOYOI - Sign Up</title>
+    <title>KOYOI - 会員登録</title>
     <!-- CSS 연결-->
     <link rel="stylesheet" href="/static/css/login/signup.css">
     <!-- Swiper CSS Lib -->
@@ -49,36 +49,36 @@
 
             <!-- 오른쪽 회원가입 폼 -->
             <div class="signup-right">
-                <div class="title">Sign Up</div>
-                <p class="subtitle">Create your KOYOI account</p>
+                <div class="title">会員登録</div>
+                <p class="subtitle">こよい、あなたをお待ちしていました</p>
 
                 <form action="/signup" method="post" enctype="multipart/form-data" class="signup-form">
 
                     <!-- ID -->
                     <div class="form-group">
-                        <label for="user_id">ID</label>
+                        <label for="user_id">ユーザー名</label>
                         <div class="check-wrapper">
-                            <input type="text" id="user_id" name="user_id" placeholder="Enter your ID" required>
-                            <button type="button" id="checkIdBtn" class="check-btn small">Check</button>
+                            <input type="text" id="user_id" name="user_id" placeholder="ユーザー名を入力" required>
+                            <button type="button" id="checkIdBtn" class="check-btn small">チェック</button>
                         </div>
                         <div id="id-error" class="error-message"></div>
                     </div>
 
                     <!-- PW -->
-                    <label for="user_pw">Password</label>
-                    <input type="password" id="user_pw" name="user_pw" placeholder="Enter your password" required>
+                    <label for="user_pw">パスワード</label>
+                    <input type="password" id="user_pw" name="user_pw" placeholder="パスワードを入力" required>
 
-                    <label for="user_pw_confirm">Confirm Password</label>
+                    <label for="user_pw_confirm">パスワード再入力</label>
                     <input type="password" id="user_pw_confirm" name="user_pw_confirm"
-                           placeholder="Confirm your password" required>
+                           placeholder="パスワードを再入力" required>
                     <div id="pw-error" class="error-message"></div>
 
                     <!-- User Type -->
                     <div class="form-group">
-                        <label>User Type</label>
+                        <label>ユーザータイプ</label>
                         <div class="user-type-selector">
-                            <button type="button" class="user-type-btn" data-type="1">User</button>
-                            <button type="button" class="user-type-btn" data-type="2">Counselor</button>
+                            <button type="button" class="user-type-btn" data-type="1">ユーザー</button>
+                            <button type="button" class="user-type-btn" data-type="2">カウンセラー</button>
                         </div>
                         <!-- 실제 전송할 값 -->
                         <input type="hidden" name="user_type" id="user_type" value="" required>
@@ -87,27 +87,27 @@
 
                     <!-- Name -->
                     <div class="form-group">
-                        <label for="user_name">User Name</label>
-                        <input type="text" id="user_name" name="user_name" placeholder="Enter your name" required>
+                        <label for="user_name">お名前</label>
+                        <input type="text" id="user_name" name="user_name" placeholder="お名前を入力" required>
                         <div id="name-error" class="error-message"></div>
                     </div>
 
                     <!-- Nickname -->
                     <div class="form-group">
-                        <label for="user_nickname">Nickname</label>
+                        <label for="user_nickname">ニックネーム</label>
                         <div class="check-wrapper">
-                            <input type="text" id="user_nickname" name="user_nickname" placeholder="Enter your nickname" required>
-                            <button type="button" id="checkNicknameBtn" class="check-btn small">Check</button>
+                            <input type="text" id="user_nickname" name="user_nickname" placeholder="ニックネームを入力" required>
+                            <button type="button" id="checkNicknameBtn" class="check-btn small">チェック</button>
                         </div>
                         <div id="nickname-error" class="error-message"></div>
                     </div>
 
                     <!-- Email -->
                     <div class="form-group">
-                        <label for="user_email">Email</label>
+                        <label for="user_email">メールアドレス</label>
                         <div class="check-wrapper">
-                            <input type="email" id="user_email" name="user_email" placeholder="Enter your email" required>
-                            <button type="button" id="checkEmailBtn" class="check-btn small">Check</button>
+                            <input type="email" id="user_email" name="user_email" placeholder="メールアドレスを入力" required>
+                            <button type="button" id="checkEmailBtn" class="check-btn small">チェック</button>
                         </div>
                         <div id="email-error" class="error-message"></div>
                     </div>
@@ -115,7 +115,7 @@
 
                     <!-- Profile -->
                     <div class="form-group">
-                        <label for="user_img">Profile Image</label>
+                        <label for="user_img">プロフィール画像</label>
                         <div class="file-upload-wrapper">
                             <input type="file" id="user_img" name="user_img" accept="image/*">
                             <!-- 썸네일 미리보기 -->
@@ -125,10 +125,10 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="signup-btn">Sign Up</button>
+                    <button type="submit" class="signup-btn">会員登録</button>
 
                     <div class="login-option">
-                        <p>Already have an account? <a href="/login">Login here</a></p>
+                        <p>アカウントをお持ちの方はこちら<a href="/login">ログイン</a></p>
                     </div>
                 </form>
             </div>

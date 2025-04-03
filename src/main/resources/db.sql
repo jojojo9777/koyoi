@@ -275,6 +275,12 @@ SELECT *
 FROM MAIN_QUOTE
 WHERE 1 = 2;
 
+select * from TEST_USER;
+
+ALTER TABLE TEST_USER
+    ADD CONSTRAINT pk_test_user PRIMARY KEY (user_id);
+
+
 -- 습관 관리 테이블 (MAIN_HABIT)
 CREATE TABLE TEST_HABIT
 (
@@ -577,58 +583,24 @@ FROM TEST_HABIT_TRACKING;
 
 
 -- ==========================================
--- ========== ADD COLUMN ==========
+-- ========== TEST ==========
 -- ==========================================
-ALTER TABLE MAIN_USER
-    ADD user_nickname VARCHAR2(10);
-ALTER TABLE MAIN_USER
-    ADD CONSTRAINT uk_user_nickname UNIQUE (user_nickname);
-
-ALTER TABLE MAIN_DIARY
-    ADD title VARCHAR2(200) NOT NULL;
-
-ALTER TABLE TEST_DIARY
-    ADD title VARCHAR2(200) NOT NULL;
 
 
-SELECT *
-FROM TEST_COUNSELING_RESERVATION
-WHERE counseling_id = 366;
+INSERT INTO TEST_USER
+(user_id, user_type, user_name, user_nickname, user_email, user_password, user_img, created_at)
+VALUES
+    ('admin1', 3, 'admin', 'admin', 'admin@example.com', '1111', NULL, SYSDATE);
+
+
+select * from test_user;
 
 
 ALTER TABLE MAIN_CHAT ADD (create_at DATE DEFAULT SYSDATE);
 ALTER TABLE TEST_CHAT ADD (create_at DATE DEFAULT SYSDATE);
+ALTER TABLE TEST_CHAT MODIFY CHAT_TITLE VARCHAR2(100);
 
+select * from test_chat;
 
-
-
-SELECT constraint_name, constraint_type, table_name
-FROM user_constraints
-WHERE table_name IN ('TEST_DIDARY', 'TEST_EMOTION');
-
-SELECT MAIN_HABIT_SEQ.NEXTVAL FROM DUAL;
-SELECT MAIN_HABIT_SEQ.CURRVAL FROM DUAL;
-
-INSERT INTO TEST_HABIT (habit_id, user_id, habit_name, created_at)
-VALUES (MAIN_HABIT_SEQ.NEXTVAL, 'user001', '아침 운동', SYSDATE);
-
-select * from TEST_HABIT_TRACKING;
-select * from TEST_HABIT;
-
-SELECT constraint_name, delete_rule
-FROM user_constraints
-WHERE table_name = 'TEST_HABIT_TRACKING'
-  AND constraint_type = 'R';
-
-ALTER TABLE TEST_HABIT_TRACKING
-    ADD CONSTRAINT fk_tracking_habit
-        FOREIGN KEY (habit_id)
-            REFERENCES TEST_HABIT(habit_id)
-                ON DELETE CASCADE;
-
-
-
-DELETE FROM TEST_HABIT_TRACKING
-WHERE  tracking_id = 3;
-ALTER TABLE TEST_CHAT MODIFY chat_title VARCHAR2(100);
-ALTER TABLE TEST_CHAT MODIFY create_at DEFAULT SYSDATE;
+ALTER TABLE test_chat
+    MODIFY create_at DATE DEFAULT SYSDATE NOT NULL;

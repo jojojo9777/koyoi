@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // 중복 체크 함수 (id, name, nickname)
 function checkDuplicate(type, value) {
     if (!value.trim()) {
-        alert(`Please enter ${type}.`);
+        alert(`${type}を入力してください`);
         return;
     }
 
@@ -118,12 +118,12 @@ function checkDuplicate(type, value) {
         .then(response => response.json())
         .then(data => {
             if (data.exists) {
-                alert(`This ${type} is already in use.`);
+                alert(`既に登録されている${type} です`);
                 if (type === "id") isIdChecked = false;
                 if (type === "email") isEmailChecked = false;
                 if (type === "nickname") isNicknameChecked = false;
             } else {
-                alert(`This ${type} is available!`);
+                alert(`この${type}使用可能です！`);
                 if (type === "id") isIdChecked = true;
                 if (type === "email") isEmailChecked = true;
                 if (type === "nickname") isNicknameChecked = true;
@@ -131,7 +131,7 @@ function checkDuplicate(type, value) {
         })
         .catch(error => {
             console.error(`Error checking ${type}:`, error);
-            alert(`Failed to check ${type}.`);
+            alert(`${type}のチェックに失敗しました`);
         });
 }
 
@@ -147,10 +147,10 @@ function checkPasswordMatch() {
     }
 
     if (pw !== pwConfirm) {
-        pwError.textContent = "Passwords do not match.";
+        pwError.textContent = "パスワードが一致していません";
         pwError.style.color = "red";
     } else {
-        pwError.textContent = "Passwords match!";
+        pwError.textContent = "パスワードが一致しました！";
         pwError.style.color = "green";
     }
 }
@@ -214,8 +214,8 @@ function validateSignupForm() {
 
     // 필수 항목 미입력 시 에러 처리
     if (!userType) {
-        alert("Please select a user type.");
-        document.getElementById("user-type-error").textContent = "Please select a user type.";
+        alert("ユーザータイプを選んでください");
+        document.getElementById("user-type-error").textContent = "ユーザータイプを選んでください";
         console.warn("❌ user_type 미선택");
 
         // 선택 버튼 영역 강조 (선택 사항)
@@ -230,21 +230,21 @@ function validateSignupForm() {
         return false;
     }
     if (!isIdChecked) {
-        alert("Please check for ID duplication before signing up.");
+        alert("ユーザー名のチェックを行ってください");
         document.getElementById("user_id").focus();
         console.warn("❌ ID 중복 체크 미완료");
         return false;
     }
 
     if (!userId) {
-        document.getElementById("id-error").textContent = "Please enter your ID.";
+        document.getElementById("id-error").textContent = "ユーザー名を入力してください";
         document.getElementById("user_id").focus();
         console.warn("❌ ID 미입력");
         return false;
     }
 
     if (!userPw) {
-        pwError.textContent = "Please enter your password.";
+        pwError.textContent = "パスワードを入力してください";
         pwError.style.color = "red";
         pwInput.focus();
         console.warn("❌ 비밀번호 미입력");
@@ -252,7 +252,7 @@ function validateSignupForm() {
     }
 
     if (userPw !== userPwConfirm) {
-        pwError.textContent = "Passwords do not match.";
+        pwError.textContent = "パスワードが一致していません";
         pwError.style.color = "red";
         pwConfirmInput.focus();
         console.warn("❌ 비밀번호 불일치");
@@ -260,21 +260,21 @@ function validateSignupForm() {
     }
 
     if (!userName) {
-        document.getElementById("name-error").textContent = "Please enter your name.";
+        document.getElementById("name-error").textContent = "お名前を入力してください";
         document.getElementById("user_name").focus();
         console.warn("❌ 이름 미입력");
         return false;
     }
 
     if (!userNickname) {
-        document.getElementById("nickname-error").textContent = "Please enter your nickname.";
+        document.getElementById("nickname-error").textContent = "ニックネームを入力してください";
         document.getElementById("user_nickname").focus();
         console.warn("❌ 닉네임 미입력");
         return false;
     }
 
     if (!userEmail) {
-        document.getElementById("email-error").textContent = "Please enter your email.";
+        document.getElementById("email-error").textContent = "メールアドレスを入力してください";
         document.getElementById("user_email").focus();
         console.warn("❌ 이메일 미입력");
         return false;

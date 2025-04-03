@@ -7,7 +7,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>KOYOI - Login</title>
+    <title>KOYOI - ログイン</title>
     <!-- CSS 연결-->
     <link rel="stylesheet" href="/static/css/login/login.css">
     <!-- js 연결 -->
@@ -56,23 +56,23 @@
             <!-- 오른쪽 로그인 -->
             <div class="login-right">
                 <div class="title">KOYOI</div>
-                <p class="subtitle"> Login </p>
-                <p class="login-cont">Welcome back. Please login to your account.</p>
+                <p class="subtitle"> ログイン </p>
+                <p class="login-cont">こよいもお会いできて嬉しいです</p>
 
                 <form action="/login" method="post" class="login-form" onsubmit="return validateForm()">
                     <%--                    <form action="/login" method="post" class="login-form">--%>
-                    <label for="user_id">ID</label>
-                    <input type="text" id="user_id" name="user_id" placeholder="Enter your ID">
+                    <label for="user_id">ユーザー名</label>
+                    <input type="text" id="user_id" name="user_id" placeholder="ユーザー名を入力">
                     <span id="id-error" class="error-message"></span>
 
-                    <label for="user_pw">Password</label>
-                    <input type="password" id="user_pw" name="user_pw" placeholder="Enter your password">
+                    <label for="user_pw">パスワード</label>
+                    <input type="password" id="user_pw" name="user_pw" placeholder="パスワードを入力">
                     <span id="pw-error" class="error-message"></span>
 
-                    <button type="submit" class="login-btn">Login</button>
+                    <button type="submit" class="login-btn">ログイン</button>
 
                     <div class="signup-option">
-                        <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+                        <p>アカウントをお持ちでない場合はこちら <a href="/signup">会員登録</a></p>
                     </div>
                 </form>
 
@@ -89,7 +89,7 @@
 <div id="loginFailModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <p> The ID or password you entered is incorrect. Please try again. </p>
+        <p> ユーザー名またはパスワードを正しく入力してください</p>
     </div>
 </div>
 

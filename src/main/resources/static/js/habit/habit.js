@@ -1,8 +1,4 @@
 
-
-
-
-
 // 오늘 날짜 반환
 function getTodayDateStr() {
   const today = new Date();
